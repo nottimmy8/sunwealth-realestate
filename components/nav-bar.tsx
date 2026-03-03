@@ -2,17 +2,28 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="max-w-6xl w-full mx-auto rounded-full bg-white p-2">
-      <div className="flex items-center justify-between">
+    <div className="w-full bg-white/40 backdrop-blur-md border border-white/20 p-2 shadow-lg transition-all duration-300">
+      <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
         <div>
           <img src="/logo.png" alt="logo" />
         </div>
         <div>
           <ul className="flex items-center gap-10">
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#">properties</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
           </ul>
         </div>
         <div>

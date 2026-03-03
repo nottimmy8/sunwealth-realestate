@@ -7,10 +7,14 @@ import FeaturedProperties from "@/components/featured-properties";
 import AboutUs from "@/components/aboutUs";
 import Testimonial from "@/components/testimonial";
 
+import Footer from "@/components/footer";
+import Service from "@/components/service";
+import Contact from "@/components/contact";
+
 const Home = () => {
   return (
-    <div className="w-full h-screeen">
-      <div className="fixed z-50 top-10  w-full ">
+    <div className="w-full min-h-screen">
+      <div className="fixed z-50 top-o w-full px-4 md:px-0">
         <Navbar />
       </div>
       <HeroParallax />
@@ -20,12 +24,12 @@ const Home = () => {
       <FeaturedProperties />
 
       <AboutUs />
+      <Service />
 
       <Testimonial />
+      <Contact />
 
-      <footer className="bg-black h-[400px] ">
-        <div></div>
-      </footer>
+      <Footer />
     </div>
   );
 };

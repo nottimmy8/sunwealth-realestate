@@ -1,65 +1,102 @@
 "use client";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const AboutUs = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
+    target: containerRef,
+    offset: ["start end", "end start"],
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-50, 50]);
 
   return (
-    <div
-      ref={ref}
-      className="relative h-[700px] py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden flex items-center justify-center rounded-2xl "
+    <section
+      ref={containerRef}
+      id="about"
+      className="relative py-24 bg-white overflow-hidden flex flex-col items-center justify-center "
     >
-      <motion.div className="absolute inset-0" style={{ y: backgroundY }}>
-        <Image
-          src="/img2.png"
-          alt="about us"
-          fill
-          className="object-cover opacity-70 z-0  "
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/50 rounded-2xl" />
-      </motion.div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="grid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
 
-      <motion.div
-        style={{ y: textY }}
-        className="relative z-10 px-4 max-w-5xl mx-auto text-center"
-      >
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-yellow-400 font-sans tracking-[0.2em] uppercase text-sm md:text-base mb-6 font-semibold"
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-2xl "
         >
-          Sunwealth Ltd — RC: 1739523.
-        </motion.h1>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-xl md:text-4xl font-bold text-zinc-200 "
-        >
-          Let’s find your dream property.
-        </motion.h2>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl md:text-4xl font-bold text-zinc-200 "
-        >
-          Contact Sunwealth Ltd today <br /> for professional, trustworthy
-          service.
-        </motion.h2>
-      </motion.div>
-    </div>
+          <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-red-600 mb-4">
+            About Us
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-serif text-zinc-900 leading-tight">
+            Sunwealth Journery <br />
+            <span className="italic font-light">since</span> --XXXX
+          </h3>
+        </motion.div>
+
+        <div className="flex flex-col md:flex-row mt-7 items-start justify-between gap-8 ">
+          <span className="bg-yellow-500 rounded-2xl max-w-[500px] w-full h-[500px] shadow-md "></span>
+          <span className="max-w-xl ">
+            <h1 className="text-4xl md:text-3xl font-semibold mb-4">CEO: </h1>
+            <h1 className="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, odio. Dolorum laudantium hic error autem iste
+              voluptatibus debitis cupiditate! Quam, earum. Nostrum molestias
+              facilis excepturi fugiat rem. Doloremque, sequi iste.{" "}
+            </h1>
+            <h1 className="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, odio. Dolorum laudantium hic error autem iste
+              voluptatibus debitis cupiditate! Quam, earum. Nostrum molestias
+              facilis excepturi fugiat rem. Doloremque, sequi iste. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Quibusdam, odio.
+              Dolorum laudantium hic error autem iste voluptatibus debitis
+              cupiditate! Quam, earum. Nostrum molestias facilis excepturi
+              fugiat rem. Doloremque, sequi iste.
+            </h1>
+            <h1>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, odio. Dolorum laudantium hic error autem iste
+              voluptatibus debitis cupiditate! Quam, earum. Nostrum molestias
+              facilis excepturi fugiat rem. Doloremque, sequi iste. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Quibusdam, odio.
+              Dolorum laudantium hic error autem iste voluptatibus debitis
+              cupiditate! Quam, earum. Nostrum molestias facilis excepturi
+              fugiat rem. Doloremque, sequi iste.
+            </h1>
+
+            <a
+              href=""
+              className="mt-3 text-yellow-600 underline hover:text-yellow-700"
+            >
+              Read more
+            </a>
+          </span>
+        </div>
+      </div>
+    </section>
   );
 };
 

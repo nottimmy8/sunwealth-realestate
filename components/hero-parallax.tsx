@@ -19,6 +19,7 @@ const HeroParallax = () => {
   return (
     <div
       ref={ref}
+      id="home"
       className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-zinc-900 "
     >
       <motion.div className="absolute inset-0 " style={{ y: backgroundY }}>
