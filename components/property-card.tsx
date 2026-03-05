@@ -50,7 +50,7 @@ export default function PropertyCard({
         className="group flex gap-0 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-zinc-100 transition-all duration-500"
       >
         {/* Image */}
-        <div className="relative w-56 shrink-0 overflow-hidden">
+        <div className="relative w-52 shrink-0 overflow-hidden">
           <Image
             src={item.images[imgIdx] ?? item.images[0]}
             alt={item.title}

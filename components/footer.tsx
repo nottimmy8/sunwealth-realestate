@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <footer
       ref={containerRef}
-      className=" relative bg-zinc-950  overflow-hidden text-slate-300 py-32 border-t border-slate-800"
+      className=" relative bg-zinc-950 min-h-screen  overflow-hidden text-slate-300 py-32 border-t border-slate-800"
     >
       {/* Floating decoration */}
       <motion.div

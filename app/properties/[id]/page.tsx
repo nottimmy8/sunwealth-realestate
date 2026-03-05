@@ -48,10 +48,10 @@ const PropertyDetailPage = () => {
 
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
 
-        <div className="absolute inset-0 flex flex-col justify-between px-6 md:px-12 pt-24">
+        <div className="absolute inset-0 flex flex-col justify-between px-6 md:px-12 pt-32 pb-12">
           <Link
             href="/list"
-            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white hover:text-red-500 transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white hover:text-red-500 transition-colors group relative z-30"
           >
             <ArrowLeft
               size={18}

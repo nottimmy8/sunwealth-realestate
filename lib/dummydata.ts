@@ -19,11 +19,16 @@ export interface Data {
 export const listData: Data[] = [
   {
     id: 1,
-    images: ["/img1.png", "/img2.png"],
+    images: [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
+    ],
     title: "The Meridian Residence",
     location: "Victoria Island, Lagos",
     price: "₦250,000,000",
-    priceValue: 250000000,
+    priceValue: 25000000,
     type: "House",
     beds: 5,
     baths: 4,
@@ -37,7 +42,13 @@ export const listData: Data[] = [
   },
   {
     id: 2,
-    images: ["/img2.png", "/img3.png"],
+    images: [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800&q=80",
+      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?w=800&q=80",
+    ],
     title: "Skyline Penthouse",
     location: "Lekki Phase 1, Lagos",
     price: "₦1,800,000 / mo",
@@ -55,7 +66,12 @@ export const listData: Data[] = [
   },
   {
     id: 3,
-    images: ["/img3.png", "/img1.png"],
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
+    ],
     title: "Emerald Court Villa",
     location: "Ikoyi, Lagos",
     price: "₦400,000,000",
@@ -73,7 +89,13 @@ export const listData: Data[] = [
   },
   {
     id: 4,
-    images: ["/img1.png", "/img3.png"],
+    images: [
+      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?w=800&q=80",
+    ],
     title: "Harbour View Estate",
     location: "Eko Atlantic, Lagos",
     price: "₦550,000,000",
@@ -91,7 +113,13 @@ export const listData: Data[] = [
   },
   {
     id: 5,
-    images: ["/img2.png", "/img1.png"],
+    images: [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?w=800&q=80",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+      "https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?w=800&q=80",
+    ],
     title: "Greenfield Acres",
     location: "Epe, Lagos",
     price: "₦45,000,000",
@@ -109,7 +137,13 @@ export const listData: Data[] = [
   },
   {
     id: 6,
-    images: ["/img3.png", "/img2.png"],
+    images: [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1c294436ce?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
+    ],
     title: "Coral Gardens Apartment",
     location: "Ajah, Lagos",
     price: "₦550,000 / mo",
@@ -126,7 +160,13 @@ export const listData: Data[] = [
   },
   {
     id: 7,
-    images: ["/img1.png", "/img2.png"],
+    images: [
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
+    ],
     title: "Palm Grove Terrace",
     location: "Banana Island, Lagos",
     price: "₦620,000,000",
@@ -144,7 +184,13 @@ export const listData: Data[] = [
   },
   {
     id: 8,
-    images: ["/img2.png", "/img3.png"],
+    images: [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1c294436ce?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+    ],
     title: "Marina Loft Studio",
     location: "Lagos Island, Lagos",
     price: "₦380,000 / mo",
@@ -162,7 +208,12 @@ export const listData: Data[] = [
   },
   {
     id: 9,
-    images: ["/img3.png", "/img1.png"],
+    images: [
+      // "https://images.unsplash.com/photo-1562940251-5dd54bf312dc?w=800&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?w=800&q=80",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+    ],
     title: "Westland Prime Plot",
     location: "Ikeja GRA, Lagos",
     price: "₦120,000,000",
@@ -179,7 +230,13 @@ export const listData: Data[] = [
   },
   {
     id: 10,
-    images: ["/img1.png", "/img3.png"],
+    images: [
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800&q=80",
+      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80",
+    ],
     title: "The Riviera Duplex",
     location: "Oniru, Lagos",
     price: "₦900,000 / mo",
@@ -197,7 +254,13 @@ export const listData: Data[] = [
   },
   {
     id: 11,
-    images: ["/img2.png", "/img1.png"],
+    images: [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800&q=80",
+    ],
     title: "The Crown Mansion",
     location: "Magodo GRA, Lagos",
     price: "₦185,000,000",
@@ -215,7 +278,13 @@ export const listData: Data[] = [
   },
   {
     id: 12,
-    images: ["/img3.png", "/img2.png"],
+    images: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "https://images.unsplash.com/photo-1544485303-a1b4d0ad45de?w=800&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?w=800&q=80",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+    ],
     title: "Atlantic Crest Land",
     location: "Badagry, Lagos",
     price: "₦28,000,000",

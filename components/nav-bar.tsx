@@ -31,11 +31,11 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`w-full transition-all duration-500 ${
           scrolled
-            ? "bg-zinc-950/80 backdrop-blur-xl border-b border-white/5 shadow-2xl"
-            : "bg-white/10  backdrop-blur-md border-b border-white/10"
+            ? "bg-zinc-950/80 text-white backdrop-blur-xl border-b border-white/5 shadow-2xl"
+            : "bg-white/10 backdrop-blur-md border-b border-white/10"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6  py-2.5 flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 shrink-0">
             <img src="/logo.png" alt="Sunwealth" className="h-10 w-auto" />

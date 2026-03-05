@@ -24,7 +24,7 @@ const HeroParallax = () => {
     >
       <motion.div className="absolute inset-0 " style={{ y: backgroundY }}>
         <Image
-          src={banner}
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
           alt="Luxury real estate banner"
           fill
           className="object-cover opacity-60  "

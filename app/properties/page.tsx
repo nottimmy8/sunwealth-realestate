@@ -9,6 +9,7 @@ import { Building2, Home, TrendingUp, Star, ArrowLeft } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import { Search } from "lucide-react";
 import Link from "next/link";
+import MapPanel from "@/components/map-panel";
 
 function applyFilters(data: typeof listData, f: FilterState) {
   return data.filter((item) => {
@@ -205,45 +206,66 @@ export default function PropertiesPage() {
           totalCount={listData.length}
         />
 
-        <AnimatePresence mode="wait">
-          {filtered.length === 0 ? (
-            <EmptyState key="empty" onClear={clearAll} />
-          ) : viewMode === "list" ? (
+        <div
+          className={`flex gap-6 mt-6 ${viewMode === "map" ? "flex-col lg:flex-row" : "flex-col"}`}
+        >
+          <div className={viewMode === "map" ? "flex-1 min-w-0" : "w-full"}>
+            <AnimatePresence mode="wait">
+              {filtered.length === 0 ? (
+                <EmptyState key="empty" onClear={clearAll} />
+              ) : viewMode === "list" ? (
+                <motion.div
+                  key="list"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex flex-col gap-4"
+                >
+                  {filtered.map((item, i) => (
+                    <PropertyCard
+                      key={item.id}
+                      item={item}
+                      viewMode="list"
+                      index={i}
+                    />
+                  ))}
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="grid"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                >
+                  {filtered.map((item, i) => (
+                    <PropertyCard
+                      key={item.id}
+                      item={item}
+                      viewMode="grid"
+                      index={i}
+                    />
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {viewMode === "map" && (
             <motion.div
-              key="list"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex flex-col gap-4"
+              key="map-panel"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.4 }}
+              className="w-full lg:w-[420px] shrink-0"
             >
-              {filtered.map((item, i) => (
-                <PropertyCard
-                  key={item.id}
-                  item={item}
-                  viewMode="list"
-                  index={i}
-                />
-              ))}
-            </motion.div>
-          ) : (
-            <motion.div
-              key="grid"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-            >
-              {filtered.map((item, i) => (
-                <PropertyCard
-                  key={item.id}
-                  item={item}
-                  viewMode="grid"
-                  index={i}
-                />
-              ))}
+              <div className="sticky top-24">
+                <MapPanel items={filtered} />
+              </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </div>
       </div>
     </div>
   );
