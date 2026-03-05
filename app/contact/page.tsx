@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { Phone, Mail, MapPin, ArrowRight, Clock } from "lucide-react";
 
-const Contact = () => {
+const ContactPage = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -13,31 +13,38 @@ const Contact = () => {
   const imgY = useTransform(scrollYProgress, [0, 1], [-40, 40]);
 
   return (
-    <section
-      ref={containerRef}
-      id="contact"
-      className="relative py-28 bg-[#fafaf9] overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4 border border-red-200 px-4 py-1.5 rounded-full bg-red-50">
-            Contact Us
-          </span>
-          <h2 className="text-5xl md:text-6xl font-serif text-zinc-900 leading-tight">
-            Let's find your <br />
-            <span className="italic font-light text-zinc-500">
-              dream property.
-            </span>
-          </h2>
-        </motion.div>
+    <div ref={containerRef} className=" relative min-h-screen bg-white">
+      {/* Header Section */}
+      <div className="relative bg-zinc-950 text-white overflow-hidden pt-20">
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 50%, #dc2626 0%, transparent 50%), radial-gradient(circle at 80% 20%, #ffffff 0%, transparent 40%)",
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-6 pt-12 pb-20 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-red-500 mb-4">
+              Contact Us
+            </p>
+            <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-6">
+              Let's find your{" "}
+              <span className="italic font-light"> dream property.</span>
+            </h1>
+            <p className="text-zinc-400 max-w-2xl text-lg leading-relaxed">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae at
+              eos odio voluptatibus
+            </p>
+          </motion.div>
+        </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Left: Contact Form */}
@@ -200,8 +207,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Contact;
+export default ContactPage;

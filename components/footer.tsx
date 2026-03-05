@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import {
   Mail,
   Phone,
@@ -9,16 +11,37 @@ import {
   Linkedin,
   ArrowRight,
 } from "lucide-react";
+import { label } from "framer-motion/client";
 
 const Footer = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const decorY = useTransform(scrollYProgress, [0, 1], [-60, 60]);
+
   return (
-    <footer className="bg-slate-950 text-slate-300 py-20 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+    <footer
+      ref={containerRef}
+      className=" relative bg-zinc-950  overflow-hidden text-slate-300 py-32 border-t border-slate-800"
+    >
+      {/* Floating decoration */}
+      <motion.div
+        style={{ y: decorY }}
+        className="absolute -top-24 -right-24 w-[500px] h-[500px] rounded-full bg-red-700/10 blur-3xl pointer-events-none"
+      />
+      <motion.div
+        style={{ y: decorY }}
+        className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-yellow-500/10 blur-3xl pointer-events-none"
+      />
+      <div className="max-w-7xl mx-auto px-6 relatice z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
           {/* Brand & Intro */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl leading-none">
                   S
                 </span>
@@ -65,19 +88,18 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg">Quick Links</h3>
             <ul className="flex flex-col gap-3">
               {[
-                "Home",
-                "Properties",
-                "Agents",
-                "Services",
-                "News & Blog",
-                "Contact Us",
-              ].map((item) => (
-                <li key={item}>
+                { label: "Home", href: "#home" },
+                { label: "Properties", href: "#properties" },
+                { label: "Services", href: "#services" },
+                { label: "News & Blog", href: "#blog" },
+                { label: "Contact Us", href: "#contact" },
+              ].map((item, i) => (
+                <li key={i}>
                   <a
-                    href="#"
+                    href={item.href}
                     className="text-sm text-slate-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}

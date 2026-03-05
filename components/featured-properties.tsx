@@ -3,57 +3,62 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { ArrowRight, BedDouble, Bath, Square } from "lucide-react";
+import Link from "next/link";
+import { listData } from "@/lib/dummydata";
 
-const properties = [
-  {
-    id: 1,
-    title: "The Glass Pavilion",
-    location: "Beverly Hills, CA",
-    price: "$12,500,000",
-    type: "House",
-    beds: 5,
-    baths: 6,
-    sqft: "8,200",
-    image: "/img1.png",
-  },
-  {
-    id: 2,
-    title: "Oceanfront Estate",
-    location: "Malibu, CA",
-    price: "$28,000,000",
-    type: "House",
-    beds: 7,
-    baths: 9,
-    sqft: "12,500",
-    image: "/img2.png",
-  },
-  {
-    id: 3,
-    title: "Skyline Penthouse",
-    location: "Manhattan, NY",
-    price: "$45,000 / mo",
-    type: "Rent",
-    beds: 3,
-    baths: 4,
-    sqft: "4,100",
-    image: "/img3.png",
-  },
-  {
-    id: 4,
-    title: "Vineyard Acreage",
-    location: "Napa Valley, CA",
-    price: "$8,200,000",
-    type: "Land",
-    beds: 0,
-    baths: 0,
-    sqft: "45 Acres",
-    image: "/img1.png",
-  },
-];
+// const properties = [
+//   {
+//     id: 1,
+//     title: "The Glass Pavilion",
+//     location: "Beverly Hills, CA",
+//     price: "$12,500,000",
+//     type: "House",
+//     beds: 5,
+//     baths: 6,
+//     sqft: "8,200",
+//     image: "/img1.png",
+//   },
+//   {
+//     id: 2,
+//     title: "Oceanfront Estate",
+//     location: "Malibu, CA",
+//     price: "$28,000,000",
+//     type: "House",
+//     beds: 7,
+//     baths: 9,
+//     sqft: "12,500",
+//     image: "/img2.png",
+//   },
+//   {
+//     id: 3,
+//     title: "Skyline Penthouse",
+//     location: "Manhattan, NY",
+//     price: "$45,000 / mo",
+//     type: "Rent",
+//     beds: 3,
+//     baths: 4,
+//     sqft: "4,100",
+//     image: "/img3.png",
+//   },
+//   {
+//     id: 4,
+//     title: "Vineyard Acreage",
+//     location: "Napa Valley, CA",
+//     price: "$8,200,000",
+//     type: "Land",
+//     beds: 0,
+//     baths: 0,
+//     sqft: "45 Acres",
+//     image: "/img1.png",
+//   },
+// ];
 
 export default function FeaturedProperties() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section
+      id="properties"
+      className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
+    >
       <div className="flex flex-col md:flex-row justify-between items-end mb-16">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -70,23 +75,25 @@ export default function FeaturedProperties() {
             <span className="italic font-light">discerning</span> buyer.
           </h3>
         </motion.div>
-        <motion.button
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-8 md:mt-0 flex items-center gap-2 text-sm font-bold uppercase tracking-wider hover:text-red-600 transition-colors group"
-        >
-          View All Properties
-          <ArrowRight
-            size={16}
-            className="transform group-hover:translate-x-1 transition-transform"
-          />
-        </motion.button>
+        <Link href="/properties">
+          <motion.button
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-8 md:mt-0 flex items-center gap-2 border  border-zinc-200 px-5 py-2.5 rounded-full  text-sm font-bold uppercase tracking-wider  hover:text-white hover:bg-zinc-950 hover:border-zinc-950 transition-all duration-300 shrink-0 group"
+          >
+            View All Properties
+            <ArrowRight
+              size={16}
+              className="transform group-hover:translate-x-1 transition-transform"
+            />
+          </motion.button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {properties.map((property, index) => (
+        {listData.slice(0, 4).map((property, index) => (
           <motion.div
             key={property.id}
             initial={{ opacity: 0, y: 50 }}
@@ -97,7 +104,7 @@ export default function FeaturedProperties() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6">
               <Image
-                src={property.image}
+                src={property.images[0]}
                 alt={property.title}
                 fill
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -107,9 +114,11 @@ export default function FeaturedProperties() {
                 {property.type}
               </div>
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                <span className="bg-white text-black px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  View Details
-                </span>
+                <Link href={`/properties/${property.id}`}>
+                  <span className="bg-white text-black px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    View Details
+                  </span>
+                </Link>
               </div>
             </div>
 

@@ -75,7 +75,7 @@ const HeroParallax = () => {
             Explore Properties
           </button>
           <button className="px-8 py-4 bg-transparent border border-white text-white font-medium uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors w-full sm:w-auto">
-            Schedule a Tour
+            Book Consultation
           </button>
         </motion.div>
       </motion.div>
