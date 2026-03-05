@@ -32,7 +32,7 @@ const Navbar = () => {
         className={`w-full transition-all duration-500 ${
           scrolled
             ? "bg-zinc-950/80 text-white backdrop-blur-xl border-b border-white/5 shadow-2xl"
-            : "bg-white/10 backdrop-blur-md border-b border-white/10"
+            : "bg-zinc-950/80 text-white backdrop-blur-md border-b border-white/10"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6  py-2.5 flex items-center justify-between">
@@ -50,7 +50,7 @@ const Navbar = () => {
                   className={`relative text-sm font-medium group transition-colors duration-300 ${
                     scrolled
                       ? "text-zinc-300 hover:text-white"
-                      : "text-zinc-900 hover:text-black"
+                      : "text-zinc-300 hover:text-white"
                   }`}
                 >
                   {link.label}

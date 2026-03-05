@@ -31,8 +31,7 @@ const HeroParallax = () => {
           priority
           referrerPolicy="no-referrer"
         />
-        {/* <div className="absolute inset-0 bg-black/80"></div> */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-white"></div>
+        <div className="absolute inset-0  bg-gradient-to-b from-black/80 via-transparent to-black/80" />
       </motion.div>
 
       <motion.div
